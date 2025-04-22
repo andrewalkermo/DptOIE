@@ -73,27 +73,32 @@ jobs:
         run: |
           cd build
           java -jar DptOIE.jar -sentencesIN ../inputs/ceten-200.txt
-          mv extractedFactsByDpOIE.csv ceten-200_DptOIE_B.csv
+          mv output/extractedFactsByDpOIE.csv ceten-200_DptOIE_B.csv
+          mv output/extractedFactsByDpOIE.json ceten-200_DptOIE_B.json
       - name: DptOIE_B_SC
         run: |
           cd build
           java -jar DptOIE.jar -SC true -sentencesIN ../inputs/ceten-200.txt
-          mv extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC.csv
+          mv output/extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC.csv
+          mv output/extractedFactsByDpOIE.json ceten-200_DptOIE_B_SC.json
       - name: DptOIE_B_SC_A
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 1 -sentencesIN ../inputs/ceten-200.txt
-          mv extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_A.csv
+          mv output/extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_A.csv
+          mv output/extractedFactsByDpOIE.json ceten-200_DptOIE_B_SC_A.json
       - name: DptOIE_B_SC_AT
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 2 -sentencesIN ../inputs/ceten-200.txt
-          mv extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_AT.csv
+          mv output/extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_AT.csv
+          mv output/extractedFactsByDpOIE.json ceten-200_DptOIE_B_SC_AT.json
       - name: DptOIE_B_SC_AT_CC
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 2 -CC true -sentencesIN ../inputs/ceten-200.txt
-          mv extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_AT_CC.csv
+          mv output/extractedFactsByDpOIE.csv ceten-200_DptOIE_B_SC_AT_CC.csv
+          mv output/extractedFactsByDpOIE.json ceten-200_DptOIE_B_SC_AT_CC.json
       - name: ceten-200 results
         uses: actions/upload-artifact@v4
         with:
@@ -104,6 +109,11 @@ jobs:
             build/ceten-200_DptOIE_B_SC_A.csv
             build/ceten-200_DptOIE_B_SC_AT.csv
             build/ceten-200_DptOIE_B_SC_AT_CC.csv
+            build/ceten-200_DptOIE_B.json
+            build/ceten-200_DptOIE_B_SC.json
+            build/ceten-200_DptOIE_B_SC_A.json
+            build/ceten-200_DptOIE_B_SC_AT.json
+            build/ceten-200_DptOIE_B_SC_AT_CC.json
 
   wiki-200:
     needs: build
@@ -126,27 +136,32 @@ jobs:
         run: |
           cd build
           java -jar DptOIE.jar -sentencesIN ../inputs/wiki-200.txt
-          mv extractedFactsByDpOIE.csv wiki-200_DptOIE_B.csv
+          mv output/extractedFactsByDpOIE.csv wiki-200_DptOIE_B.csv
+          mv output/extractedFactsByDpOIE.json wiki-200_DptOIE_B.json
       - name: DptOIE_B_SC
         run: |
           cd build
           java -jar DptOIE.jar -SC true -sentencesIN ../inputs/wiki-200.txt
-          mv extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC.csv
+          mv output/extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC.csv
+          mv output/extractedFactsByDpOIE.json wiki-200_DptOIE_B_SC.json
       - name: DptOIE_B_SC_A
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 1 -sentencesIN ../inputs/wiki-200.txt
-          mv extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_A.csv
+          mv output/extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_A.csv
+          mv output/extractedFactsByDpOIE.json wiki-200_DptOIE_B_SC_A.json
       - name: DptOIE_B_SC_AT
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 2 -sentencesIN ../inputs/wiki-200.txt
-          mv extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_AT.csv
+          mv output/extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_AT.csv
+          mv output/extractedFactsByDpOIE.json wiki-200_DptOIE_B_SC_AT.json
       - name: DptOIE_B_SC_AT_CC
         run: |
           cd build
           java -jar DptOIE.jar -SC true -appositive 2 -CC true -sentencesIN ../inputs/wiki-200.txt
-          mv extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_AT_CC.csv
+          mv output/extractedFactsByDpOIE.csv wiki-200_DptOIE_B_SC_AT_CC.csv
+          mv output/extractedFactsByDpOIE.json wiki-200_DptOIE_B_SC_AT_CC.json
       - name: wiki-200 results
         uses: actions/upload-artifact@v4
         with:
@@ -157,3 +172,8 @@ jobs:
             build/wiki-200_DptOIE_B_SC_A.csv
             build/wiki-200_DptOIE_B_SC_AT.csv
             build/wiki-200_DptOIE_B_SC_AT_CC.csv
+            build/wiki-200_DptOIE_B.json
+            build/wiki-200_DptOIE_B_SC.json
+            build/wiki-200_DptOIE_B_SC_A.json
+            build/wiki-200_DptOIE_B_SC_AT.json
+            build/wiki-200_DptOIE_B_SC_AT_CC.json
