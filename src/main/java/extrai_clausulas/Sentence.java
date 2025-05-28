@@ -85,7 +85,10 @@ public class Sentence {
         for (Sentence sentence : sentences) {
             for (Token t : sentence.getSentenca()) {
 //                System.out.println(t.getForm() + " " + p.mapeamentoTokenPosTagger(t.getCpostag()));
-                t.setCpostag(PreProcessamento.mapeamentoTokenPosTagger(t.getCpostag()));
+                String cposTag = PreProcessamento.mapeamentoTokenPosTagger(t.getCpostag());
+                if (cposTag != null) {
+                    t.setCpostag(cposTag);
+                }
             }
         }
 
